@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/", method='POST'>
+        <h2>Formulaire d'inscription </h2>
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="text" name="prenom" placeholder="Prenom" required>
+        <input type="number" name="matricule" placeholder="Matricule" required>
+        <select name="specialite" required>
+            Specialité
+            <option value="DSI">DSI</option>
+            <option value="RSS">RSS</option>
+            <option value="DWM">DWM</option>
+            <option value="IDS">IDS</option>
+        </select>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

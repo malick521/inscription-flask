@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>inscription Etudiant</h1>
+            <ul>
+                <li><a href='/'>Page Formulaire</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>      
+            {% if etudiants|length == 0 %}     
+
+                <h1>Aucun etudiant pour le moment !</h1>
+
+            {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Matricule</th>
+                        <th>Specialite</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for etudiant in etudiants %}
+                            <tr>
+                                <td>{{ etudiant.id }}</td>
+                                <td>{{ etudiant.nom }}</td>
+                                <td>{{ etudiant.prenom }}</td>
+                                <td>{{ etudiant.matricule }}</td>
+                                <td>{{ etudiant.specialite }}</td>
+                                <td>
+                                    <a href="/delete/{{ etudiant.id }}" class='delete'>Supprimer</a>
+                                </td>
+                            </tr>
+                         {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </section>
+
+    </main>
+
+    <tfoot>
+        <footer>
+            &copy; Copyright 2026 - RIMCore Tech
+        </footer>
+    </tfoot>
+</body>
+</html>
