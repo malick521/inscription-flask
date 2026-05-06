@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <h2>Mini Projet Flask</h2>
+          <ul>   
+                <li><a href="/">Acceuil</a></li>
+                <li><a href="add_student">Ajouter Etudiant</a></li>
+                <li><a href="listes_students">Voir Etudiants</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+            <div class="container">
+                 <div class='container-contact'>
+                    <h1>Contactez-nous pour plus d'information</h1>
+                     <div class="contact-form">
+                       <img src="./static/icons/envelope-solid-full.svg" alt="email">
+                       <p>24009@supnum.mr</p>      
+                     </div>
+
+                    <div class="contact-form">
+                        <img src="/static/icons/phone-solid-full.svg" alt="email">
+                        <p>+222 44 00 01 02</p>
+                    </div>
+
+                    <div class="contact-form">
+                        <img src="/static/icons/location-dot-solid-full.svg" alt="email">
+                        <p>Nouakchott</p>
+                    </div>
+                     <div class="contact-form">
+                        <img src="/static/icons/globe-solid-full.svg" alt="email">
+                        <p>rimcore.mr</p>
+                    </div>
+                 </div>
+                 <img src="./static/images/image2.jpg" alt="image_home">
+           </div>
+    </main>
+
+
+  <tfoot>
+        <footer>
+                &copy; Copyright 2026 - Mauritania 
+
+        </footer>
+    </tfoot>
+
+
+</body>
+</html>

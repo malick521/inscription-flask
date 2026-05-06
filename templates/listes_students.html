@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <h2>Mini Projet Flask</h2>
+             <ul>
+                <li><a href="/">Acceuil</a></li>
+                <li><a href="add_student">Ajouter Etudiant</a></li>
+                <li><a href="listes_students">Voir Etudiants</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+           <section>      
+            {% if etudiants|length == 0 %}     
+
+                <h1>Aucun etudiant pour le moment !</h1>
+
+            {% else %}
+             <h1 style='text-align:center;'>Liste Etudiant : </h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Filiere</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for etudiant in etudiants %}
+                            <tr>
+                                <td>{{ etudiant.id }}</td>
+                                <td>{{ etudiant.nom }}</td>
+                                <td>{{ etudiant.email }}</td>
+                                <td>{{ etudiant.age }}</td>
+                                <td>{{ etudiant.filiere }}</td>
+                                <td>
+                                    <a href="/delete/{{ etudiant.id }}" class='delete'>Supprimer</a>
+                                </td>
+                            </tr>
+                         {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </section>
+              
+    </main>
+
+
+    <tfoot>
+        <footer>
+                &copy; Copyright 2026 - Mauritania 
+
+        </footer>
+    </tfoot>
+
+</body>
+</html>

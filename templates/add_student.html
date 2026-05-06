@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <h2>Mini Projet Flask</h2>
+            <ul>
+                <li><a href="/">Acceuil</a></li>
+                <li><a href="add_student">Ajouter Etudiant</a></li>
+                <li><a href="listes_students">Voir Etudiants</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+          <form action="/add_student", method='POST'>
+                <h2>Inscription Etudiant</h2>
+
+                <div class="input-form">
+                    <label for="nom">Nom : </label>
+                    <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                </div>
+                <p class='error-add'>{{ error_name }}</p>
+
+                <div class="input-form">
+                    <label for="email">Email : </label>
+                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                </div>
+                <p class='error-add'>{{ error_email }}</p>
+
+                <div class="input-form">
+                    <label for="age">Age : </label>
+                    <input type="number" name="age" id="age" placeholder="Age" required>
+                </div>
+                <p class='error-add'>{{ error_age }}</p>
+
+                <div class="input-form">
+                <label for="filiere">Filiere : </label>
+                <select name="filiere" id="filiere" required>
+                    <option value="DSI">DSI</option>
+                    <option value="RSS">RSS</option>
+                    <option value="DWM">DWM</option>
+                    <option value="IDS">IDS</option>
+                </select>
+                </div>
+                <button type='submit'>Ajoutez</button>
+                
+            </form>
+
+    </main>
+
+
+    <tfoot>
+        <footer>
+                &copy; Copyright 2026 - Mauritania 
+
+        </footer>
+    </tfoot>
+
+</body>
+</html>
